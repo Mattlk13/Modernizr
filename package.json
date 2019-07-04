@@ -12,7 +12,8 @@
     "markdown-it": "^8.4.2",
     "mkdirp": "^0.5.1",
     "requirejs": "^2.3.6",
-    "yargs": "^13.2.4"
+    "yargs": "^13.2.4",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "@alrra/travis-scripts": "^3.0.1",
@@ -49,7 +50,9 @@
     "serve-gh-pages": "gulp serve:gh-pages",
     "update-gh-pages": "scripts/generate-gh-pages.sh",
     "update-changelog": "auto-changelog --commit-limit false --package",
-    "update-license": "node scripts/generate-license.js && git add LICENSE"
+    "update-license": "node scripts/generate-license.js && git add LICENSE",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "main": "./lib/cli",
   "bin": "./bin/modernizr",
@@ -114,5 +117,6 @@
       "url": "https://twitter.com/hansalbern"
     }
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
