@@ -9,14 +9,14 @@ define(['ModernizrProto', 'testPropsAll', 'cssToDOM', 'atRule'], function(Modern
    * @access public
    * @function prefixed
    * @param {string} prop - String name of the property to test for
-   * @param {Object} [obj] - An object to test for the prefixed properties on
+   * @param {object} [obj] - An object to test for the prefixed properties on
    * @param {HTMLElement} [elem] - An element used to test specific properties against
-   * @returns {string|false} The string representing the (possibly prefixed) valid
+   * @returns {string|boolean} The string representing the (possibly prefixed) valid
    * version of the property, or `false` when it is unsupported.
    * @example
    *
    * Modernizr.prefixed takes a string css value in the DOM style camelCase (as
-   * opposed to the css style kebab-case) form and returns the (possibly prefixed)
+   * opposed to the css style hyphen-case) form and returns the (possibly prefixed)
    * version of that property that the browser actually supports.
    *
    * For example, in older Firefox...
@@ -61,7 +61,7 @@ define(['ModernizrProto', 'testPropsAll', 'cssToDOM', 'atRule'], function(Modern
    * var transEndEventName = transEndEventNames[ Modernizr.prefixed('transition') ];
    * ```
    *
-   * If you want a similar lookup, but in kebab-case, you can use [prefixedCSS](#modernizr-prefixedcss).
+   * If you want a similar lookup, but in hyphen-case, you can use [prefixedCSS](#modernizr-prefixedcss).
    */
   var prefixed = ModernizrProto.prefixed = function(prop, obj, elem) {
     if (prop.indexOf('@') === 0) {
@@ -69,7 +69,7 @@ define(['ModernizrProto', 'testPropsAll', 'cssToDOM', 'atRule'], function(Modern
     }
 
     if (prop.indexOf('-') !== -1) {
-      // Convert kebab-case to camelCase
+      // Convert hyphen-case to camelCase
       prop = cssToDOM(prop);
     }
     if (!obj) {

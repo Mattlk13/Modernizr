@@ -1,16 +1,48 @@
 # Modernizr 
 [![npm version](https://badge.fury.io/js/modernizr.svg)](https://badge.fury.io/js/modernizr)
-[![Build Status](https://api.travis-ci.org/Modernizr/Modernizr.svg?branch=master)](https://travis-ci.org/Modernizr/Modernizr) 
+[![Build Status](https://github.com/Modernizr/Modernizr/workflows/Testing/badge.svg)](https://github.com/Modernizr/Modernizr/actions)
+[![codecov](https://codecov.io/gh/Modernizr/Modernizr/branch/master/graph/badge.svg)](https://codecov.io/gh/Modernizr/Modernizr)
 [![Inline docs](https://inch-ci.org/github/Modernizr/Modernizr.svg?branch=master)](https://inch-ci.org/github/Modernizr/Modernizr)
+
+
+- Read this file in Portuguese-BR [here](/README.pt_br.md)
 
 ##### Modernizr is a JavaScript library that detects HTML5 and CSS3 features in the user’s browser.
 
-- [Website](https://modernizr.com)
+- Our Website is outdated and broken, please DO NOT use it (https://modernizr.com) but rather build your modernizr version from npm.
 - [Documentation](https://modernizr.com/docs/)
 - [Integration tests](https://modernizr.github.io/Modernizr/test/integration.html)
 - [Unit tests](https://modernizr.github.io/Modernizr/test/unit.html)
 
 Modernizr tests which native CSS3 and HTML5 features are available in the current UA and makes the results available to you in two ways: as properties on a global `Modernizr` object, and as classes on the `<html>` element. This information allows you to progressively enhance your pages with a granular level of control over the experience.
+
+## Breaking changes with v4
+
+- Dropped Node 10 Support, please upgrade to Node v12
+
+- Following tests got renamed:
+  
+  - `class` to `es6class` to keep in line with the rest of the es-tests
+
+- Following tests got moved in subdirectories:
+
+  - `cookies`, `indexeddb`, `indexedblob`, `quota-management-api`, `userdata` moved into the storage subdirectory
+  - `audio` moved into the audio subdirectory
+  - `battery` moved into the battery subdirectory
+  - `canvas`, `canvastext` moved into the canvas subdirectory
+  - `customevent`, `eventlistener`, `forcetouch`, `hashchange`, `pointerevents`, `proximity` moved into the event subdirectory
+  - `exiforientation` moved into the image subdirectory
+  - `capture`, `fileinput`, `fileinputdirectory`, `formatattribute`, `input`, `inputnumber-l10n`, `inputsearchevent`, `inputtypes`, `placeholder`, `requestautocomplete`, `validation` moved into the input subdirectory
+  - `svg` moved into the svg subdirectory
+  - `webgl` moved into the webgl subdirectory
+     
+- Following tests got removed:
+  
+  - `touchevents`: [discussion](https://github.com/Modernizr/Modernizr/pull/2432)
+  - `unicode`: [discussion](https://github.com/Modernizr/Modernizr/issues/2468)
+  - `templatestrings`: duplicate of the es6 detect `stringtemplate`
+  - `contains`: duplicate of the es6 detect `es6string`
+  - `datalistelem`: A dupe of Modernizr.input.list
 
 ## New Asynchronous Event Listeners
 
@@ -101,16 +133,6 @@ and navigating to these two URLs:
 http://localhost:8080/test/unit.html
 http://localhost:8080/test/integration.html
 ```
- 
- 
-## Deprecation
-
-These tests are considered deprecated. They are not included anymore in the default build
-and will be removed in the next major version:
-
-- `touchevents` (in 4.0)
-- `unicode` (in 4.0) 
-
 
 ## Code of Conduct
 

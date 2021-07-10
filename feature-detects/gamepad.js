@@ -2,8 +2,10 @@
 {
   "name": "GamePad API",
   "property": "gamepads",
+  "caniuse": "gamepad",
   "authors": ["Eric Bidelman"],
   "tags": ["media"],
+  "warnings": ["In new browsers it may return false in non-HTTPS connections"],
   "notes": [{
     "name": "W3C Spec",
     "href": "https://www.w3.org/TR/gamepad/"

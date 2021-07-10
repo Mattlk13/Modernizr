@@ -8,10 +8,10 @@ define(['ModernizrProto', 'testPropsAll'], function(ModernizrProto, testPropsAll
    * @optionProp testAllProps
    * @access public
    * @function testAllProps
-   * @param {string} prop - String naming the property to test (either camelCase or kebab-case)
+   * @param {string} prop - String naming the property to test (either camelCase or hyphen-case)
    * @param {string} [value] - String of the value to test
    * @param {boolean} [skipValueTest=false] - Whether to skip testing that the value is supported when using non-native detection
-   * @returns {false|string} returns the string version of the property, or false if it is unsupported
+   * @returns {string|boolean} returns the string version of the property, or `false` if it is unsupported
    * @example
    *
    * testAllProps determines whether a given CSS property, in some prefixed form,
